@@ -3,15 +3,42 @@ import { useGlobalContext } from "./context";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
 
 const categories = [
-  "General knowledge",
-  "History",
-  "Geography",
-  "Sports",
-  "Films",
-  "Music",
-  "Vehicles",
-  "Books",
-  "Politics"
+  {
+    key: "generalKnowledge",
+    title: "General knowledge",
+  },
+  {
+    key: "history",
+    title: "History",
+  },
+  {
+    key: "geography",
+    title: "Geography",
+  },
+  {
+    key: "sports",
+    title: "Sports",
+  },
+  {
+    key: "films",
+    title: "Films",
+  },
+  {
+    key: "music",
+    title: "Music",
+  },
+  {
+    key: "vehicles",
+    title: "Vehicles",
+  },
+  {
+    key: "books",
+    title: "Books",
+  },
+  {
+    key: "politics",
+    title: "Politics",
+  },
 ];
 
 const SetupForm = () => {
@@ -20,7 +47,7 @@ const SetupForm = () => {
     <main>
       <section className="quiz quiz-small rounded-2xl">
         <form className="setup-form">
-          <h2 className="py-5 font-bold">setup quiz</h2>
+          <h2 className="py-5 font-bold">Setup quiz</h2>
           {/* amount */}
           <div className="form-control">
             <Input
@@ -44,18 +71,15 @@ const SetupForm = () => {
               className="max-w-md"
               placeholder=" "
               defaultSelectedKeys={[quiz.category]}
-              onChange={(e) => {
-                setQuiz({ ...quiz, category: e.target.value }),
-                  console.log(quiz);
-              }}
+              onChange={(e) => setQuiz({ ...quiz, category: e.target.value })}
               classNames={{ listbox: "p-0" }}
             >
               {categories.map((category) => (
                 <SelectItem
                   className="data-[selectable=true]:focus:bg-blue-400 data-[hover=true]:bg-blue-400"
-                  key={category}
+                  key={category.key}
                 >
-                  {category}
+                  {category.title}
                 </SelectItem>
               ))}
             </Select>
@@ -68,8 +92,7 @@ const SetupForm = () => {
               className="max-w-md"
               defaultSelectedKeys={[quiz.difficulty]}
               onChange={(e) => {
-                setQuiz({ ...quiz, category: e.target.value }),
-                  console.log(quiz);
+                setQuiz({ ...quiz, category: e.target.value });
               }}
             >
               <SelectItem key="easy">Easy</SelectItem>

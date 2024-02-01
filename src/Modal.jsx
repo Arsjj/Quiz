@@ -3,7 +3,6 @@ import { useGlobalContext } from "./context";
 import { Button } from "@nextui-org/react";
 
 const Modal = () => {
-  console.log(useGlobalContext());
   const { isModalOpen, closeModal, correct, questions } = useGlobalContext();
   return (
     <div
