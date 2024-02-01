@@ -40,10 +40,9 @@ function App() {
           correct answers : {correct}/{index}
         </p>
         <article className="container">
-          <h2
-            className="text-[32px] min-h-28 text-center mb-10 font-bold max-sm:text-2xl max-sm:min-h-36"
-            dangerouslySetInnerHTML={{ __html: question }}
-          />
+          <h2 className="text-[32px] min-h-28 text-center mb-10 font-bold max-sm:text-2xl max-sm:min-h-36">
+            {question}
+          </h2>
           <div className="btn-container">
             {answers.map((answer, index) => {
               return (
@@ -51,8 +50,9 @@ function App() {
                   key={index}
                   className="answer-btn"
                   onClick={() => checkAnswer(correct_answer === answer)}
-                  dangerouslySetInnerHTML={{ __html: answer }}
-                />
+                >
+                  {answer}
+                </button>
               );
             })}
           </div>

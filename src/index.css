@@ -99,6 +99,14 @@ p {
   color: var(--clr-grey-3);
 }
 
+.right {
+  background-color: green !important;
+}
+
+.wrong {
+  background-color: red !important;
+}
+
 /*  global classes */
 
 /* section */
