@@ -32,10 +32,14 @@ function App() {
     answers.push(answers[tempIndex]);
     answers[tempIndex] = correct_answer;
   }
+  console.log(answers);
+  console.log(question);
+
+
   return (
     <main>
       <Modal />
-      <section className="quiz rounded-2xl bg-yellow-100/30">
+      <section className="quiz rounded-2xl bg-yellow-100/30 max-md:p-4">
         <p className="correct-answers">
           correct answers : {correct}/{index}
         </p>

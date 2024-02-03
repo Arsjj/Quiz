@@ -1,6 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "./context";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 
 const categories = [
   {
@@ -45,7 +46,11 @@ const SetupForm = () => {
   const { quiz, setQuiz, handleSubmit, error } = useGlobalContext();
   return (
     <main>
-      <section className="quiz quiz-small rounded-2xl">
+      <section className="quiz quiz-small relative rounded-2xl max-sm:w-full max-sm:px-5">
+        <div className="absolute top-0 right-0 w-28 h-28">
+          <img src="https://png.pngtree.com/png-vector/20230503/ourmid/pngtree-quiz-time-bubble-speech-banner-vector-design-png-image_7078139.png"></img>
+        </div>
+
         <form className="setup-form">
           <h2 className="py-5 font-bold">Setup quiz</h2>
           {/* amount */}
@@ -68,7 +73,7 @@ const SetupForm = () => {
             <Select
               label="Category"
               labelPlacement="outside"
-              className="max-w-md"
+              // className="max-w-md"
               placeholder=" "
               defaultSelectedKeys={[quiz.category]}
               onChange={(e) => setQuiz({ ...quiz, category: e.target.value })}
@@ -89,7 +94,7 @@ const SetupForm = () => {
               label="Difficulty"
               labelPlacement="outside"
               placeholder=" "
-              className="max-w-md"
+              // className="max-w-md"
               defaultSelectedKeys={[quiz.difficulty]}
               onChange={(e) => {
                 setQuiz({ ...quiz, category: e.target.value });
